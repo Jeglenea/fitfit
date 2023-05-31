@@ -1,6 +1,13 @@
 import React from "react";
 import "./Home.css";
 import Product from "./Product";
+import fitfit_background from "./img/background.jpg";
+import fitness01 from "./img/fitness 01.jpg";
+import fitness02 from "./img/fitness 02.jpg";
+import diet01 from "./img/guide-high-protein-diet.jpg";
+import diet02 from "./img/guide-keto-diet.jpg";
+import diet03 from "./img/guide-low-carb-foods.jpg";
+import diet04 from "./img/guide-time-restricted-eating.jpg";
 
 function Home() {
   return (
@@ -8,57 +15,56 @@ function Home() {
       <div className="home__container">
         <img
           className="home__image"
-          src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-          alt=""
+          src= {fitfit_background}
         />
 
         <div className="home__row">
           {/* burada verileri db üzerinden çekip onları ekleyebiliriz. title price image rating için */}
           <Product
             id="12321341"
-            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses Paperback"
+            title="FB Blend - Burn Fat, Build Muscle, Tone; 35 or 55 Minutes a Day"
             price={11.96}
             rating={5}
-            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._SX325_BO1,204,203,200_.jpg"
+            image={fitness01}
           />
           <Product
             id="49538094"
-            title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+            title="FB Low Impact Round 2 - Build Muscle & Burn Fat - 40 Minutes or Less"
             price={239.0}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+            image={fitness02}
           />
         </div>
         <div className="home__row">
         <Product
             id="4903850"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
+            title="High Protein Diet Program"
             price={199.99}
             rating={3}
-            image="https://images-na.ssl-images-amazon.com/images/I/71Swqqe7XAL._AC_SX466_.jpg"
+            image={diet01}
           />
           <Product
             id="23445930"
-            title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
+            title="Keto Diet Program"
             price={98.99}
             rating={5}
-            image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
+            image={diet02}
           />
           <Product
             id="3254354345"
-            title="New Apple iPad Pro (12.9-inch, Wi-Fi, 128GB) - Silver (4th Generation)"
+            title="Low Carbohydrate Diet Program"
             price={598.99}
             rating={4}
-            image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L._AC_SX385_.jpg"
+            image={diet03}
           />
         </div>
         <div className="home__row">
         <Product
             id="90829332"
-            title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
+            title="Intermittent Fasting Diet"
             price={1094.98}
             rating={3}
-            image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
+            image={diet04}
           />
         </div>
       </div>

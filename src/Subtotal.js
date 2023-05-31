@@ -15,7 +15,7 @@ function Subtotal({decimalScale, value, displayType, thousandSeparator, prefix})
               renderText={(value) => (
                 <>
                   <p>
-                    Subtotal ({basket.length} items): <strong>{value}</strong>
+                    Subtotal ({basket.length} plans): <strong>{value}</strong>
                   </p>
                   <small className="subtotal__gift"> {/*Bu kısım silinebilir/yeniden düzenlenebilir.*/}
                     <input type="checkbox" /> This order contains a gift

@@ -5,6 +5,7 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link } from 'react-router-dom';
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
+import fitfit_logo from "./img/logo new.png"
 
 function Header() {
   const[{basket, user }, dispatch] = useStateValue();
@@ -21,7 +22,7 @@ function Header() {
         {/* Logo */}
         <img
         className="header__logo"
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+        src= {fitfit_logo}
       />
       </Link>
 
@@ -43,7 +44,7 @@ function Header() {
         </div>
         <div className="header__option">
           <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo">Prime</span>
+          <span className="header__optionLineTwo">Plan</span>
         </div>
         <Link to="/checkout">
           <div className="header__optionBasket">
