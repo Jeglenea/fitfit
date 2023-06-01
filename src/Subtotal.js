@@ -26,7 +26,7 @@ function Subtotal({decimalScale, value, displayType, thousandSeparator, prefix})
               value={getBasketTotal(basket)}
               displayType={"text"}
               thousandSeparator={true}
-              prefix={"₺"}
+              prefix={"$"}
             />
             <button>Proceed to Checkout</button>
 

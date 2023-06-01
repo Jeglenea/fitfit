@@ -3,6 +3,8 @@ import './Login.css'
 import { Link, useNavigate  } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "./firebase";
+import fitfit_logo from "./img/logo new.png"
+
 
 function Login() {
     // history => navigate
@@ -39,7 +41,7 @@ function Login() {
             <Link to='/'>
                 <img
                     className="login__logo"
-                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png' 
+                    src= {fitfit_logo} 
                 />
             </Link>
 
@@ -57,11 +59,11 @@ function Login() {
                 </form>
 
                 <p>
-                    By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
+                    By signing-in you agree to the fitfit Conditions of Use & Sale. Please
                     see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
                 </p>
 
-                <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
+                <button onClick={register} className='login__registerButton'>Create your fitfit Account</button>
             </div>
         </div>
     )
