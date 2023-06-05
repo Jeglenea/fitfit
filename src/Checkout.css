@@ -14,8 +14,13 @@
     margin-right: 10px;
     padding: 10px;
     border-bottom: 1px solid lightgray;
+    color: #2E2E2E;
   }
 
   .checkout_right {
     padding: 10px;
+  }
+
+  .checkout_hi{
+    color: #2E2E2E;
   }

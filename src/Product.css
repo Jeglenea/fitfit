@@ -1,3 +1,4 @@
+
 .product {
   display: flex;
   flex-direction: column;
@@ -10,9 +11,11 @@
   min-width: 100px;
   background-color: white;
   z-index: 1;
+  border-radius: 12px;
 }
 .product__rating{
     display: flex;
+    color: #2bd481;
 }
 .product > img {
   max-height: 200px;
@@ -25,13 +28,24 @@
   height: 100px;
   margin-bottom: 15px;
 }
-.product_price {
+.product__price {
   margin-top: 5px;
+  color: #2E2E2E;
 }
 .product > button {
-  background: #f0c14b;
+  background: #45D9CC;
   border: 1px solid;
   margin-top: 10px;
-  border-color: #a88734 #9c7e31 D#846a29;
-  color: #111;
+  color: white;
+  border-radius: 6px;
+  width: 120px;
+  height: 40px;
+  transition-duration: 0.4s;
+}
+.product > button:hover{
+  background: #3BBBB0;
+}
+
+.product__name {
+  color: #2E2E2E;
 }

@@ -9,12 +9,19 @@
 }
 
 .checkoutProduct__info > button {
-    background: #f0c14b;
+    background: #45D9CC;
     border: 1px solid;
     margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
-    color: #111;
+    color: white;
+    transition-duration: 0.4s;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
 }
+
+.checkoutProduct__info > button:hover{
+    background: #3BBBB0;
+  }
 
 .checkoutProduct__image {
     object-fit: contain;
@@ -24,9 +31,15 @@
 
 .checkoutProduct__rating {
     display: flex;
+    color: #2bd481;
   }
 
 .checkoutProduct__title {
     font-size: 17px;
     font-weight: 800;
+    color: #2E2E2E;
+}
+
+.checkoutProduct__price {
+    color: #2E2E2E;
 }
