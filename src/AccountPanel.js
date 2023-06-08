@@ -56,7 +56,7 @@ function AccountPanel() {
                     <tbody>
                     <tr>
                         <th> 2014 </th>
-                        <td style={{size: calc(2/10)}}></td>
+                        <td style={{size:0.2}}></td>
                     </tr>
                     <tr>
                         <th> 2017 </th>

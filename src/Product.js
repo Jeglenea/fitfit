@@ -7,11 +7,11 @@ function Product({id, title, image, price, rating}) {
   const[basket, dispatch] = useStateValue();
 
   console.log("This is basket:", basket);
-  
+
   const addToBasket = () => {
     //dispatch the item into the data layer
     dispatch({
-      type: 'ADD_TO_BASKET',
+      type: 'ADD_TOBASKET',
       item: {
         id: id,
         title: title,
@@ -24,15 +24,15 @@ function Product({id, title, image, price, rating}) {
 
   return (
     <div className='product'>
-        <div className='product__info'>
-            <p className="product__name">
+        <div className='productinfo'>
+            <p className="productname">
                {title}
             </p>
-            <p className='product__price'>
+            <p className='productprice'>
                 <strong>$</strong>
                 <strong>{price}</strong>
             </p>
-            <div className='product__rating'>
+            <div className='productrating'>
               {/* burada yarım yıldız ve boş yıldız kullanıp bir düzen yapabiliriz bunların verisini gene db'den alırız EKLEME: Rating arrayini CheckoutProduct.js kısmında da kullandık. yarım yıldız mevzusunu oraya da eklememiz gerekir. */}
             {Array(rating).fill().map((_, i) => (<p><StarIcon/></p>))}
             </div>

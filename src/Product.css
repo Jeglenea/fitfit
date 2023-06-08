@@ -1,4 +1,3 @@
-
 .product {
   display: flex;
   flex-direction: column;
@@ -13,7 +12,7 @@
   z-index: 1;
   border-radius: 12px;
 }
-.product__rating{
+.productrating{
     display: flex;
     color: #2bd481;
 }
@@ -23,12 +22,12 @@
   object-fit: contain;
   margin-bottom: 15px;
 }
-.product__info {
+.productinfo {
   width: 100%;
   height: 100px;
   margin-bottom: 15px;
 }
-.product__price {
+.productprice {
   margin-top: 5px;
   color: #2E2E2E;
 }
@@ -46,6 +45,6 @@
   background: #3BBBB0;
 }
 
-.product__name {
+.productname {
   color: #2E2E2E;
 }
