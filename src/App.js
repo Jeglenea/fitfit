@@ -6,8 +6,10 @@ import { BrowserRouter as Router, Routes, Route }
 from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
+import AccountPanel from "./AccountPanel";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
+
 
 function App() {
   let docTitle = document.title;
@@ -48,7 +50,8 @@ function App() {
       <div className="app">
         <Routes> {/*Kullandığımız react-router-dom güncel, eski versiyonda Switch ile yapılıyordu.*/}
           <Route path="/login" element={<Login />}/>
-          <Route path="/checkout" element={<><Header /><Checkout /></>} />
+          <Route path="/checkout" element={<><Header /><Checkout /></>}/>
+          <Route path="/accountPanel" element={<><Header/><AccountPanel/></>}/>
           <Route path="/" element={<><Header /><Home /></>} /> {/*!!!!Home route'unun en altta kaldığından emin olun.!!!!*/}
         </Routes>
       </div>
