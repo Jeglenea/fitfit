@@ -3,7 +3,7 @@ import './Product.css'
 import StarIcon from '@mui/icons-material/Star';
 import { useStateValue } from './StateProvider';
 
-function Product({id, title, image, price, rating}) {
+function Product({id, title, image, price, rating, type, difficulty, dailyDuration, totalDuration, bodyFocus, trainingType, equipment}) {
   const[basket, dispatch] = useStateValue();
 
   console.log("This is basket:", basket);
@@ -18,12 +18,21 @@ function Product({id, title, image, price, rating}) {
         image: image,
         price: price,
         rating: rating,
+        type: type,  //workout & diet
+
+        //workout special
+        difficulty: difficulty,
+        dailyDuration: dailyDuration,
+        totalDuration: totalDuration,
+        bodyFocus: bodyFocus,
+        trainingType: trainingType,
+        equipment: equipment,
       },
     });
   };
 
   return (
-    <div className='product'>
+      <div className='product'>
         <div className='productinfo'>
             <p className="productname">
                {title}
@@ -39,7 +48,7 @@ function Product({id, title, image, price, rating}) {
         </div>
         <img src={image}/>
         <button onClick={addToBasket}>Learn More</button>
-    </div>
+      </div>
   )
 }
 

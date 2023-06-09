@@ -40,6 +40,7 @@
   width: 120px;
   height: 40px;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
 .product > button:hover{
   background: #3BBBB0;

@@ -10,8 +10,15 @@ import diet03 from "./img/guide-low-carb-foods.jpg";
 import diet04 from "./img/guide-time-restricted-eating.jpg";
 
 function Home() {
+  
+  
   const handleClick = () => {
-    document.getElementById("modal-display").style.display = "block";
+    const modal = document.getElementById("popup");
+    modal.classList.add("show"); 
+  }
+  const hidePopup = () => {
+    const modal = document.getElementById("popup");
+    modal.classList.remove("show");
   }
   
   
@@ -31,6 +38,17 @@ function Home() {
             price={11.96}
             rating={5}
             image={fitness01}
+
+            type="workout"
+            difficulty={4}
+            dailyDuration=" Avg. 38 Minutes -
+                            Min. 32 Minutes -
+                            Max. 45 Minutes"
+            totalDuration="4 Weeks"
+            bodyFocus="Total Body"
+            trainingType="Balance/Agility, Cardiovascular, HIIT, Pilates, Strength Training, Toning"
+            equipment="Dumbbell"
+
           />
           <Product
             id="49538094"
@@ -38,6 +56,16 @@ function Home() {
             price={239.0}
             rating={4}
             image={fitness02}
+
+            type="workout"
+            difficulty={3}
+            dailyDuration="Avg. 34 Minutes -
+                           Min. 27 Minutes -
+                           Max. 40 Minutes"
+            totalDuration="4 Weeks"
+            bodyFocus="Total Body"
+            trainingType="Balance/Agility, Cardiovascular, Low Impact, Pilates, Strength Training, Toning, Stretching/Flexibility"
+            equipment="Dumbbell"
           />
         </div>
         <div className="home__row">
@@ -47,6 +75,8 @@ function Home() {
             price={199.99}
             rating={3}
             image={diet01}
+
+           
           />
           <Product
             id="23445930"
@@ -54,6 +84,8 @@ function Home() {
             price={98.99}
             rating={5}
             image={diet02}
+
+            
           />
           <Product
             id="3254354345"
@@ -61,6 +93,8 @@ function Home() {
             price={598.99}
             rating={4}
             image={diet03}
+
+            
           />
         </div>
         <div className="home__row">
@@ -70,6 +104,8 @@ function Home() {
             price={1094.98}
             rating={3}
             image={diet04}
+
+            
           />
         </div>
         <div className="home__rowbut">
@@ -78,7 +114,10 @@ function Home() {
           </button>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <div className="modal-popup" id="popup">
+          <div className="modal-blocker" onClick={hidePopup}></div>
+          <div class="modal-fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content" id="modal-display">
                 <div class="modal-body">
@@ -102,9 +141,7 @@ function Home() {
                     </form>
                   </div>
                   <div>
-                    
                     <svg width="67px" height="578px" viewBox="0 0 67 578">
-                       
                         <title>Path</title>
                         <desc>Created with Sketch.</desc>
                         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -123,6 +160,8 @@ function Home() {
               </div>
             </div>
           </div>
+        </div>
+        
 
 
       </div>
