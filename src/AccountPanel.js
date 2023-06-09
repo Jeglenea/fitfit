@@ -1,8 +1,10 @@
 import React from 'react'
 import './AccountPanel.css';
 import 'charts.css';
+import {CircleProgress} from 'react-gradient-progress'
 
 function AccountPanel() {
+
     return (
         <div className="accountPanel">
           <div className="accountPanel__container">
@@ -38,45 +40,22 @@ function AccountPanel() {
             </div>
             <div className="accountPanel__row">
                 <div className="accountPanel__box1">
-
+                    <div className="accountPanel__circlechart">
+                        <div className="accountPanel__paragraph">
+                            <p>Total Calories</p>
+                            <p>Today</p>
+                        </div>
+                        <div className="accountPanel__innercirclechart">
+                            <CircleProgress percentage={75} strokeWidth={10} primaryColor={['#04ac94', '#d0eee9']} width={225} fontSize={24}/>
+                        </div>
+                        <div className="accountPanel__endparagraph">
+                            <p>You burned 2000 cal today</p>
+                        </div>  
+                    </div>
+                    
                 </div>
                 <div className="accountPanel__box1">
 
-                    <table class="charts-css column show-heading show-labels show-primary-axis show-4-secondary-axes show-data-axes data-spacing-15 hide-data">
-
-                    <caption> Daily Nutrition Chart </caption>
-
-                    <thead>
-                    <tr>
-                        <th scope="col"> Year </th>
-                        <th scope="col"> Value </th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr>
-                        <th> 2014 </th>
-                        <td style={{size:0.2}}></td>
-                    </tr>
-                    <tr>
-                        <th> 2017 </th>
-                        <td style={{size:0.4}}></td>
-                    </tr>
-                    <tr>
-                        <th> 2018 </th>
-                        <td style={{size:0.6}}></td>
-                    </tr>
-                    <tr>
-                        <th> 2019 </th>
-                        <td style={{size:0.8}}></td>
-                    </tr>
-                    <tr>
-                        <th> 2020 </th>
-                        <td style={{size:1.0}}></td>
-                    </tr>
-                    </tbody>
-
-                    </table>
                 </div>
             </div>
             <div className="accountPanel__row">
