@@ -47,7 +47,6 @@ function Product({id, title, image, price, rating, type, difficulty, dailyDurati
             </div>
         </div>
         <img src={image}/>
-        <button onClick={addToBasket}>Learn More</button>
       </div>
   )
 }
