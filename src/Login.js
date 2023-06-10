@@ -24,16 +24,7 @@ function Login() {
     }
 
     const register = e => {
-        e.preventDefault();
-
-            createUserWithEmailAndPassword(auth, email, password)
-            .then((auth) => {
-                // it successfully created a new user with email and password
-                if (auth) {
-                    navigate('/');
-                }
-            })
-            .catch(error => alert(error.message))
+        navigate('/SignUp');
     }
 
     return (
