@@ -1,4 +1,4 @@
-.accountPanel {
+.userProgress {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@
     background-size: contain;
 }
   
-.accountPanel__container{
+.userProgress__container{
     width: 100%;
     height: max-content;
     border-radius: 24px;
@@ -22,14 +22,14 @@
     max-width: 1400px;
 }
 
-.accountPanel__container > p {
+.userProgress__container > p {
     margin-top: 4%;
     margin-left: 5%;
     font-size: 40px;
     font-weight: 400;
 }
 
-.accountPanel__firstrow{
+.userProgress__firstrow{
     display: flex;
     flex-direction: row;
     margin-top: 1%;
@@ -38,7 +38,7 @@
     height: 250px;
 }
 
-.accountPanel__box{
+.userProgress__box{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,33 +52,33 @@
     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.1);
 }
 
-.accountPanel__box > p{
+.userProgress__box > p{
     color: #b1b1b1;
     font-size: 18px;
     font-weight: 500;
 }
 
-.accountPanel_innerbox{
+.userProgress_innerbox{
     flex-direction: row;
     display: flex;
     align-items: center;
     justify-content:center;
 }
 
-.accountPanel_innerbox > p:first-child{
+.userProgress_innerbox > p:first-child{
     font-size: 48px;
     font-weight: 400;
     margin-right: 8px;
     color: black;
 }
 
-.accountPanel_innerbox > p {
+.userProgress_innerbox > p {
     font-size: 36px;
     font-weight: 300;
     color:#b1b1b1;
 }
 
-.accountPanel__row{
+.userProgress__row{
     display: flex;
     flex-direction: row;
     margin-top: 1%;
@@ -87,7 +87,7 @@
     height: 450px;
 }
 
-.accountPanel__box1{
+.userProgress__box1{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,13 +101,13 @@
     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.1);
 }
 
-.accountPanel__paragraph > p:first-child{
+.userProgress__paragraph > p:first-child{
     font-weight: 500;
     font-size: 30px;
     color: #000000
 }
 
-.accountPanel__paragraph > p{
+.userProgress__paragraph > p{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +117,7 @@
     color: #b1b1b1
 }
 
-.accountPanel__endparagraph > p {
+.userProgress__endparagraph > p {
     display: flex;
     align-items: center;
     flex-direction: row;

@@ -49,7 +49,7 @@ function Header() {
             <span className="header__optionLineTwo">Plan</span>
           </div>
         </Link> :
-        <Link to="/AccountPanel">
+        <Link to="/userpanel">
           <div className="header__option">
             <span className="header__optionLineOne">Your</span>
             <span className="header__optionLineTwo">Plan</span>

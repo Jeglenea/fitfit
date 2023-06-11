@@ -1,17 +1,17 @@
 import React from 'react'
-import './AccountPanel.css';
+import './UserProgress.css';
 import 'charts.css';
 import {CircleProgress} from 'react-gradient-progress'
 
-function AccountPanel() {
+function UserProgress() {
 
     return (
-        <div className="accountPanel">
-          <div className="accountPanel__container">
+        <div className="userProgress">
+          <div className="userProgress__container">
             <p> dd/mm/yyyy Progress</p>
-            <div className="accountPanel__firstrow">
-                <div className="accountPanel__box">
-                    <span className="accountPanel_innerbox">
+            <div className="userProgress__firstrow">
+                <div className="userProgress__box">
+                    <span className="userProgress_innerbox">
                         <p>136</p>
                         <p>g</p>
                     </span>
@@ -19,8 +19,8 @@ function AccountPanel() {
                         PROTEIN
                     </p>
                 </div>
-                <div className="accountPanel__box">
-                    <span className="accountPanel_innerbox">
+                <div className="userProgress__box">
+                    <span className="userProgress_innerbox">
                         <p>236</p>
                         <p>g</p>
                     </span>
@@ -28,8 +28,8 @@ function AccountPanel() {
                         CARBONHYDRATE
                     </p>
                 </div>
-                <div className="accountPanel__box">
-                    <span className="accountPanel_innerbox">
+                <div className="userProgress__box">
+                    <span className="userProgress_innerbox">
                         <p>83</p>
                         <p>g</p>
                     </span>
@@ -38,31 +38,31 @@ function AccountPanel() {
                     </p>
                 </div>
             </div>
-            <div className="accountPanel__row">
-                <div className="accountPanel__box1">
-                    <div className="accountPanel__circlechart">
-                        <div className="accountPanel__paragraph">
+            <div className="userProgress__row">
+                <div className="userProgress__box1">
+                    <div className="userProgress__circlechart">
+                        <div className="userProgress__paragraph">
                             <p>Total Calories</p>
                             <p>Today</p>
                         </div>
-                        <div className="accountPanel__innercirclechart">
+                        <div className="userProgress__innercirclechart">
                             <CircleProgress percentage={75} strokeWidth={10} primaryColor={['#04ac94', '#d0eee9']} width={225} fontSize={24}/>
                         </div>
-                        <div className="accountPanel__endparagraph">
+                        <div className="userProgress__endparagraph">
                             <p>You burned 2000 cal today</p>
                         </div>  
                     </div>
                     
                 </div>
-                <div className="accountPanel__box1">
+                <div className="userProgress__box1">
 
                 </div>
             </div>
-            <div className="accountPanel__row">
-                <div className="accountPanel__box1">
+            <div className="userProgress__row">
+                <div className="userProgress__box1">
 
                 </div>
-                <div className="accountPanel__box1">
+                <div className="userProgress__box1">
                     
                 </div>
             </div>
@@ -71,4 +71,4 @@ function AccountPanel() {
     ); 
 }
 
-export default AccountPanel;
+export default UserProgress;
