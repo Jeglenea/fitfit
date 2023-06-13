@@ -76,9 +76,25 @@ function Home() {
     },
   ];
 
-  const handleClick = () => {
-    const modal = document.getElementById("popup");
-    modal.classList.add("show");
+ 
+
+
+  const handleClick = (id) => {
+    const selectedProduct = product.find((item) => item.id === id);
+    // buton id eklenip learn more butonlarına id eklenip getirebilir
+    // Verileri alın ve ekrana yazdırın
+    if (selectedProduct) {
+      const dataContainer = document.querySelector("#dataContainer");
+      
+      dataContainer.innerHTML = `
+        <p>ID: ${selectedProduct.id}</p>
+        <p>Title: ${selectedProduct.title}</p>
+        <p>Price: ${selectedProduct.price}</p>
+        <p>Rating: ${selectedProduct.rating}</p>
+        <img src="${selectedProduct.image}" alt="Product Image">
+        <p>Type: ${selectedProduct.type}</p>
+      `;
+    }
   };
   const hidePopup = () => {
     const modal = document.getElementById("popup");
@@ -195,7 +211,9 @@ function Home() {
               trainingType="Balance/Agility, Cardiovascular, HIIT, Pilates, Strength Training, Toning"
               equipment="Dumbbell"
             />
-            <button className="home__itembtn" onClick={handleClick}>
+            <button id="myButton"
+              className="home__itembtn"
+              onClick={() => handleClick("12321341")}>
               Learn More
             </button>
           </div>
@@ -216,7 +234,9 @@ function Home() {
               trainingType="Balance/Agility, Cardiovascular, Low Impact, Pilates, Strength Training, Toning, Stretching/Flexibility"
               equipment="Dumbbell"
             />
-            <button className="home__itembtn" onClick={handleClick}>
+            <button id="myButton"
+              className="home__itembtn"
+              onClick={() => handleClick("49538094")}>
               Learn More
             </button>
           </div>
@@ -230,7 +250,9 @@ function Home() {
               rating={3}
               image={diet01}
             />
-            <button className="home__itembtn" onClick={handleClick}>
+            <button id="myButton"
+              className="home__itembtn"
+              onClick={() => handleClick("4903850")}>
               Learn More
             </button>
           </div>
@@ -242,7 +264,9 @@ function Home() {
               rating={5}
               image={diet02}
             />
-            <button className="home__itembtn" onClick={handleClick}>
+            <button id="myButton"
+              className="home__itembtn"
+              onClick={() => handleClick("23445930")}>
               Learn More
             </button>
           </div>
@@ -254,7 +278,9 @@ function Home() {
               rating={4}
               image={diet03}
             />
-            <button className="home__itembtn" onClick={handleClick}>
+            <button id="myButton"
+              className="home__itembtn"
+              onClick={() => handleClick("3254354345")}>
               Learn More
             </button>
           </div>
@@ -268,9 +294,16 @@ function Home() {
               rating={3}
               image={diet04}
             />
-            <button className="home__itembtn" onClick={handleClick}>
+            <button
+              id="myButton"
+              className="home__itembtn"
+              onClick={() => handleClick("90829332")}
+            >
               Learn More
             </button>
+            <div id="dataContainer">
+
+            </div>
           </div>
         </div>
         <div className="home__rowxd">
