@@ -15,7 +15,9 @@ function UserPanel(){
             {/*https://www.npmjs.com/package/react-calendar  css dosyası src'ye çekildi. diğer türlü customize edilmiyordu.*/}
             <Calendar onChange={onChange} value={value} locale='en-EN' onClickDay={linking}/>
             {console.log(value)}
-            {value.toString()}
+            <div className='asd'>
+              {value.toString()}
+            </div>
           </div>
         </div>
     );

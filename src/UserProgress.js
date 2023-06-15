@@ -5,10 +5,9 @@ import { CircleProgress } from 'react-gradient-progress'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Sector } from 'recharts';
 
 const pieChartData = [
-    { name: "Group A", value: 400 },
-    { name: "Group B", value: 300 },
-    { name: "Group C", value: 300 },
-    { name: "Group D", value: 200 }
+    { name: "Protein", value: 544, text: 136 },
+    { name: "Carbonhydrate", value: 704, text: 176 },
+    { name: "Fat", value: 648, text: 72 }
 ];
 
 const renderActiveShape = (props) => {
@@ -24,7 +23,8 @@ const renderActiveShape = (props) => {
         fill,
         payload,
         percent,
-        value
+        value,
+        text
     } = props;
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
@@ -70,7 +70,7 @@ const renderActiveShape = (props) => {
                 y={ey}
                 textAnchor={textAnchor}
                 fill="#333"
-            >{`PV ${value}`}</text>
+            >{`${text} gr`}</text>
             <text
                 x={ex + (cos >= 0 ? 1 : -1) * 12}
                 y={ey}
@@ -89,45 +89,45 @@ const renderActiveShape = (props) => {
 function UserProgress() {
     const columnChartData = [
         {
-            name: 'Page A',
-            uv: 4000,
-            pv: 2400,
+            name: '9 Jun',
+            goal: 2400,
+            burned: 1693,
             amt: 2400,
         },
         {
-            name: 'Page B',
-            uv: 3000,
-            pv: 1398,
+            name: '10 Jun',
+            goal: 2400,
+            burned: 1724,
             amt: 2210,
         },
         {
-            name: 'Page C',
-            uv: 2000,
-            pv: 9800,
+            name: '11 Jun',
+            goal: 2400,
+            burned: 2103,
             amt: 2290,
         },
         {
-            name: 'Page D',
-            uv: 2780,
-            pv: 3908,
+            name: '12 Jun',
+            goal: 2400,
+            burned: 1974,
             amt: 2000,
         },
         {
-            name: 'Page E',
-            uv: 1890,
-            pv: 4800,
+            name: '13 Jun',
+            goal: 2400,
+            burned: 2045,
             amt: 2181,
         },
         {
-            name: 'Page F',
-            uv: 2390,
-            pv: 3800,
+            name: '14 Jun',
+            goal: 2400,
+            burned: 1749,
             amt: 2500,
         },
         {
-            name: 'Page G',
-            uv: 3490,
-            pv: 4300,
+            name: 'Today',
+            goal: 2400,
+            burned: 1894,
             amt: 2100,
         },
     ];
@@ -146,7 +146,7 @@ function UserProgress() {
     return (
         <div className="userProgress">
             <div className="userProgress__container">
-                <p> dd/mm/yyyy Progress</p>
+                <p> 15/06/2023 Progress</p>
                 <div className="userProgress__firstrow">
                     <div className="userProgress__box">
                         <span className="userProgress_innerbox">
@@ -159,7 +159,7 @@ function UserProgress() {
                     </div>
                     <div className="userProgress__box">
                         <span className="userProgress_innerbox">
-                            <p>236</p>
+                            <p>176</p>
                             <p>g</p>
                         </span>
                         <p>
@@ -168,7 +168,7 @@ function UserProgress() {
                     </div>
                     <div className="userProgress__box">
                         <span className="userProgress_innerbox">
-                            <p>83</p>
+                            <p>72</p>
                             <p>g</p>
                         </span>
                         <p>
@@ -184,17 +184,17 @@ function UserProgress() {
                                 <p>Today</p>
                             </div>
                             <div className="userProgress__innercirclechart">
-                                <CircleProgress percentage={75} strokeWidth={10} primaryColor={['#04ac94', '#d0eee9']} width={225} fontSize={24} />
+                                <CircleProgress percentage={79} strokeWidth={10} primaryColor={['#04ac94', '#d0eee9']} width={225} fontSize={24} />
                             </div>
                             <div className="userProgress__endparagraph">
-                                <p>You burned 2000 cal today</p>
+                                <p>You burned 1894 cal today</p>
                             </div>
                         </div>
 
                     </div>
                     <div className="userProgress__box1">
-                        <div className="userProgress__paragraphh">
-                            <p>Target-Result Graph</p>
+                        <div className="userProgress__paragraph">
+                            <p>Goal-Burned Graph</p>
                             <BarChart
                                 width={500}
                                 height={300}
@@ -211,15 +211,16 @@ function UserProgress() {
                                 <YAxis />
                                 <Tooltip />
                                 <Legend />
-                                <Bar dataKey="pv" fill="#8884d8" background={{ fill: "#eee" }} />
-                                <Bar dataKey="uv" fill="#82ca9d" background={{ fill: "#eee" }}/>
+                                <Bar dataKey="burned" fill="#82ca9d" background={{ fill: "#eee" }} />
+                                <Bar dataKey="goal" fill="#8884d8" background={{ fill: "#eee" }} />
                             </BarChart>
 
                         </div>
                     </div>
                 </div>
                 <div className="userProgress__row">
-                    <div className="userProgress__box1">
+                    <div className="userProgress__box1 userProgress_2ndlastbox">
+                        <span> Nutrient Percentage </span>
                         <PieChart width={400} height={400}>
                             <Pie
                                 activeIndex={activeIndex}
@@ -235,8 +236,31 @@ function UserProgress() {
                             />
                         </PieChart>
                     </div>
-                    <div className="userProgress__box1">
+                    <div className="userProgress__box1 userProgress_lastbox">
+                        <span> Today's List </span>
+                        <table>
+                            <tr>
+                                <th>Breakfast</th>
+                                <th>Lunch</th>
+                                <th>Snacks</th>
+                                <th>Dinner</th>
+                                <th>Treat</th>
+                                <th>Calories</th>
+                            </tr>
 
+                            <tr>
+                                <td> 3 ingredient Banana Pancakes
+                                     1 Fried egg</td>
+                                <td> Power Pumpkin and Berry Smoothie
+                                     1 Low-Fat Cottage Cheese Stick</td>
+                                <td> 1 Cup Low-Fat Cottage Cheese
+                                     1 Hard Boiled Egg </td>
+                                <td> Penne alla Primavera</td>
+                                <td> 1 oz dark chocolate</td>
+                                <td> 1,941 Cal</td>
+                            </tr>
+
+                        </table>
                     </div>
                 </div>
             </div>
