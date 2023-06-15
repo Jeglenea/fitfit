@@ -29,3 +29,19 @@
 .productname {
   color: #2E2E2E;
 }
+
+.home__itembtn{
+  background: #45D9CC;
+  border: 1px solid;
+  margin-top: 10px;
+  color: white;
+  border-radius: 6px;
+  width: 120px;
+  height: 40px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.home__itembtn:hover{
+  background: #3BBBB0;
+}

@@ -9,6 +9,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import UserPanel from "./UserPanel";
 import UserProgress from "./UserProgress";
+import Details from "./Details";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 
@@ -56,6 +57,7 @@ function App() {
           <Route path="/signUp" element={<SignUp />}/>
           <Route path="/userpanel" element={<><Header/><UserPanel/></>}/>
           <Route path="/userprogress" element={<><Header/><UserProgress/></>}/>
+          <Route path="/details" element={<><Header/><Details/></>}/>
           <Route path="/" element={<><Header /><Home /></>} /> {/*!!!!Home route'unun en altta kaldığından emin olun.!!!!*/}
         </Routes>
       </div>

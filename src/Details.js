@@ -3,10 +3,12 @@ import './Details.css'
 import StarIcon from '@mui/icons-material/Star';
 import { useStateValue } from './StateProvider';
 
-function Details({id, title, image, price, rating, type, difficulty, dailyDuration, totalDuration, bodyFocus, trainingType, equipment}) {
+function Details() {
     return(
-        <div>
+        <div className='details__container'>
+            <div className='details__innerContainer'>
 
+            </div>
         </div>
     )
 }
