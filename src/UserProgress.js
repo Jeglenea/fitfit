@@ -1,14 +1,13 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect  } from 'react'
 import './UserProgress.css';
 import 'charts.css';
 import { CircleProgress } from 'react-gradient-progress'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie, Sector } from 'recharts';
 
-const pieChartData = [
-    { name: "Protein", value: 544, text: 136 },
-    { name: "Carbonhydrate", value: 704, text: 176 },
-    { name: "Fat", value: 648, text: 72 }
-];
+
+
+const dietitiansGoal = 2400;
+
 
 const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
@@ -87,47 +86,88 @@ const renderActiveShape = (props) => {
 
 
 function UserProgress() {
+    const [CalPercentageVal, setCalPercentageVal] = useState(0);
+    const [calCalculatorVal, setCalCalculatorVal] = useState(0);
+
+    const [proteinVal, setProteinVal] = useState(0);
+    const [carbonhydrateVal, setCarbonhydrateVal] = useState(0);
+    const [fatVal, setFatVal] = useState(0);
+
+
+
+    function CalPercentage() {
+        const protein = document.getElementById("proteinOutput").innerHTML;
+        const carbonhydrate = document.getElementById("carbonhydrateOutput").innerHTML;
+        const fat = document.getElementById("fatOutput").innerHTML;
+
+        const calculatedPercentage = parseInt((protein * 4 + carbonhydrate * 4 + fat * 9) / dietitiansGoal * 100);
+
+        setProteinVal(protein * 4);
+        setCarbonhydrateVal(carbonhydrate * 4);
+        setFatVal(fat * 9);
+
+        setCalPercentageVal(calculatedPercentage);
+
+    }
+
+    function CalCalculator() {
+        const protein = document.getElementById("proteinOutput").innerHTML;
+        const carbonhydrate = document.getElementById("carbonhydrateOutput").innerHTML;
+        const fat = document.getElementById("fatOutput").innerHTML;
+
+        const calCalculatorVal = (protein * 4 + carbonhydrate * 4 + fat * 9);
+        document.getElementById("Calories").innerHTML = "You burned " + calCalculatorVal + " cal today";
+
+        setCalCalculatorVal(calCalculatorVal)
+    }
+
+    const pieChartData = [
+        { name: "Protein", value: proteinVal, text: proteinVal / 4 },
+        { name: "Carbonhydrate", value: carbonhydrateVal, text: carbonhydrateVal / 4 },
+        { name: "Fat", value: fatVal, text: fatVal / 9 }
+    ];
+
     const columnChartData = [
         {
             name: '9 Jun',
-            goal: 2400,
-            burned: 1693,
+            goal: dietitiansGoal,
+            burned: 1823,
             amt: 2400,
         },
         {
             name: '10 Jun',
-            goal: 2400,
+            goal: dietitiansGoal,
             burned: 1724,
             amt: 2210,
         },
         {
             name: '11 Jun',
-            goal: 2400,
+            goal: dietitiansGoal,
             burned: 2103,
             amt: 2290,
         },
         {
             name: '12 Jun',
-            goal: 2400,
+            goal: dietitiansGoal,
             burned: 1974,
             amt: 2000,
         },
         {
             name: '13 Jun',
-            goal: 2400,
+            goal: dietitiansGoal,
             burned: 2045,
             amt: 2181,
         },
         {
             name: '14 Jun',
-            goal: 2400,
+            goal: dietitiansGoal,
             burned: 1749,
             amt: 2500,
         },
         {
             name: 'Today',
-            goal: 2400,
-            burned: 1894,
+            goal: dietitiansGoal,
+            burned: calCalculatorVal,
             amt: 2100,
         },
     ];
@@ -140,17 +180,41 @@ function UserProgress() {
         [setActiveIndex]
     );
 
+    function showProteinValue(event) {
+        if (event.key === "Enter") {
+            var inputValue = event.target.value;
+            document.getElementById("proteinOutput").innerHTML = inputValue;
+            CalCalculator();
+            CalPercentage();
 
-
+        }
+    }
+    function showCarbonhydrateValue(event) {
+        if (event.key === "Enter") {
+            var inputValue = event.target.value;
+            document.getElementById("carbonhydrateOutput").innerHTML = inputValue;
+            CalCalculator();
+            CalPercentage();
+        }
+    }
+    function showFatValue(event) {
+        if (event.key === "Enter") {
+            var inputValue = event.target.value;
+            document.getElementById("fatOutput").innerHTML = inputValue;
+            CalCalculator();
+            CalPercentage();
+        }
+    }
 
     return (
         <div className="userProgress">
             <div className="userProgress__container">
-                <p> 15/06/2023 Progress</p>
+                <p>19/06/2023 Progress</p>
                 <div className="userProgress__firstrow">
                     <div className="userProgress__box">
+                        <input type="number" id="protein" placeholder="Enter your protein info" onKeyDown={showProteinValue}></input>
                         <span className="userProgress_innerbox">
-                            <p>136</p>
+                            <p id="proteinOutput">0</p>
                             <p>g</p>
                         </span>
                         <p>
@@ -158,8 +222,9 @@ function UserProgress() {
                         </p>
                     </div>
                     <div className="userProgress__box">
+                        <input type="number" id="carbonhydrate" placeholder="Enter your carbonhydrate info" onKeyDown={showCarbonhydrateValue}></input>
                         <span className="userProgress_innerbox">
-                            <p>176</p>
+                            <p id="carbonhydrateOutput">0</p>
                             <p>g</p>
                         </span>
                         <p>
@@ -167,8 +232,9 @@ function UserProgress() {
                         </p>
                     </div>
                     <div className="userProgress__box">
+                        <input type="number" id="fat" placeholder="Enter your fat info" onKeyDown={showFatValue}></input>
                         <span className="userProgress_innerbox">
-                            <p>72</p>
+                            <p id="fatOutput">0</p>
                             <p>g</p>
                         </span>
                         <p>
@@ -184,10 +250,14 @@ function UserProgress() {
                                 <p>Today</p>
                             </div>
                             <div className="userProgress__innercirclechart">
-                                <CircleProgress percentage={79} strokeWidth={10} primaryColor={['#04ac94', '#d0eee9']} width={225} fontSize={24} />
+                                <CircleProgress strokeWidth={10}
+                                    primaryColor={['#04ac94', '#d0eee9']}
+                                    width={225}
+                                    fontSize={24}
+                                    percentage={CalPercentageVal} />
                             </div>
                             <div className="userProgress__endparagraph">
-                                <p>You burned 1894 cal today</p>
+                                <p id="Calories"></p>
                             </div>
                         </div>
 
@@ -230,7 +300,7 @@ function UserProgress() {
                                 cy={200}
                                 innerRadius={60}
                                 outerRadius={80}
-                                fill="#88a4d8"
+                                fill={"#50C7C7"}
                                 dataKey="value"
                                 onMouseEnter={onPieEnter}
                             />
@@ -250,11 +320,11 @@ function UserProgress() {
 
                             <tr>
                                 <td> 3 ingredient Banana Pancakes
-                                     1 Fried egg</td>
+                                    1 Fried egg</td>
                                 <td> Power Pumpkin and Berry Smoothie
-                                     1 Low-Fat Cottage Cheese Stick</td>
+                                    1 Low-Fat Cottage Cheese Stick</td>
                                 <td> 1 Cup Low-Fat Cottage Cheese
-                                     1 Hard Boiled Egg </td>
+                                    1 Hard Boiled Egg </td>
                                 <td> Penne alla Primavera</td>
                                 <td> 1 oz dark chocolate</td>
                                 <td> 1,941 Cal</td>
