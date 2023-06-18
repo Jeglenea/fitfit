@@ -3,6 +3,8 @@
     padding: 20px;
     background-color: white;
     height: max-content;
+    justify-content: space-between;
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
   }
   
   .checkout_ad {
@@ -23,4 +25,5 @@
 
   .checkout_hi{
     color: #2E2E2E;
+    margin-top: 50px;
   }

@@ -43,7 +43,7 @@ function Home() {
       totalDuration: "4 Weeks",
       bodyFocus: "Total Body",
       trainingType:
-        "Balance/Agility, Cardiovascular, Low Impact, Pilates, Strength Training, Toning, Stretching/Flexibility",
+        "Balance/Agility, Cardiovascular, Low Impact, Pilates, Strength Training, Toning",
       equipment: "Dumbbell",
     },
     {
@@ -53,6 +53,8 @@ function Home() {
       rating: 3,
       image: diet01,
       type: "diet",
+      difficulty: 1,
+      totalDuration: "4 Weeks",
     },
     {
       id: "23445930",
@@ -61,6 +63,8 @@ function Home() {
       rating: 5,
       image: diet02,
       type: "diet",
+      difficulty: 3,
+      totalDuration: "4 Weeks",
     },
     {
       id: "3254354345",
@@ -69,6 +73,8 @@ function Home() {
       rating: 4,
       image: diet03,
       type: "diet",
+      difficulty: 4,
+      totalDuration: "4 Weeks",
     },
     {
       id: "90829332",
@@ -77,6 +83,8 @@ function Home() {
       rating: 3,
       image: diet04,
       type: "diet",
+      difficulty: 5,
+      totalDuration: "4 Weeks",
     },
   ];
 
@@ -89,89 +97,6 @@ function Home() {
     modal.classList.remove("show");
   };
 
-  const popupModal = (index) => {
-    const selectedProduct = product.find((item) => item.id === index);
-
-    if (!selectedProduct) {
-      return null;
-    }
-    return (
-      <div className="modal-popup" id="popup">
-        <div className="modal-blocker" onClick={hidePopup}></div>
-        <div
-          class="modal-fade"
-          id="exampleModal"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog" role="document">
-            <div class="modal-content" id="modal-display">
-              <div class="modal-body">
-                <div class="column" id="main">
-                  <Product
-                    id={selectedProduct.id}
-                    title={selectedProduct.title}
-                    price={selectedProduct.price}
-                    rating={selectedProduct.rating}
-                    image={selectedProduct.image}
-                    type={selectedProduct.type}
-                    difficulty={selectedProduct.difficulty}
-                    dailyDuration={selectedProduct.dailyDuration}
-                    totalDuration={selectedProduct.totalDuration}
-                    bodyFocus={selectedProduct.bodyFocus}
-                    trainingType={selectedProduct.trainingType}
-                    equipment={selectedProduct.equipment}
-                  />
-                  <div class="moreinfo info">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Sed finibus fermentum dui, finibus varius felis placerat
-                      in. Etiam eget erat eu nulla tincidunt tincidunt. Cras
-                      porttitor faucibus arcu, vitae hendrerit mauris convallis
-                      ut. Nulla ut cursus ex. Suspendisse ultricies neque non
-                      luctus tempor.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <svg width="67px" height="578px" viewBox="0 0 67 578">
-                    <title>Path</title>
-                    <desc>Created with Sketch.</desc>
-                    <g
-                      id="Page-1"
-                      stroke="none"
-                      stroke-width="1"
-                      fill="none"
-                      fill-rule="evenodd"
-                    >
-                      <path
-                        d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z"
-                        id="Path"
-                        fill="#F9BC35"
-                      ></path>
-                    </g>
-                  </svg>
-                </div>
-                <div class="column" id="secondary">
-                  <div class="sec-content">
-                    <h2>Welcome Back!</h2>
-                    <h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                    </h3>
-                    <button type="button" class="btn btn-primary">
-                      Login
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="home">
@@ -223,6 +148,9 @@ function Home() {
               price={product[2].price}
               rating={product[2].rating}
               image={product[2].image}
+              type={product[2].type}
+              difficulty={product[2].difficulty}
+              totalDuration={product[2].totalDuration}
             />
             
           </div>
@@ -233,6 +161,9 @@ function Home() {
               price={product[3].price}
               rating={product[3].rating}
               image={product[3].image}
+              type={product[3].type}
+              difficulty={product[3].difficulty}
+              totalDuration={product[3].totalDuration}
             />
             
           </div>
@@ -243,6 +174,9 @@ function Home() {
               price={product[4].price}
               rating={product[4].rating}
               image={product[4].image}
+              type={product[4].type}
+              difficulty={product[4].difficulty}
+              totalDuration={product[4].totalDuration}
             />
             
           </div>
@@ -255,13 +189,14 @@ function Home() {
               price={product[5].price}
               rating={product[5].rating}
               image={product[5].image}
+              type={product[5].type}
+              difficulty={product[5].difficulty}
+              totalDuration={product[5].totalDuration}
             />
             
           </div>
         </div>
-        <div className="home__rowxd">
-          <div>{popupModal("49538094")}</div>
-        </div>
+        
       </div>
     </div>
   );

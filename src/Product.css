@@ -42,6 +42,15 @@
   cursor: pointer;
 }
 
+.home__itembtn:first-child {
+  margin-right: 20px;
+}
+
 .home__itembtn:hover{
   background: #3BBBB0;
 }
+
+.productbtns{
+  display: flex;
+}
+

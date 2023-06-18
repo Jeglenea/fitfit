@@ -18,9 +18,6 @@ function UserPanel() {
           {console.log(value)}
           {value.toString()}
         </div>
-        <div className='userPanel__chatContainer'>
-
-        </div>
       </div>
 
 

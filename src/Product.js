@@ -5,9 +5,7 @@ import { useStateValue } from './StateProvider';
 import { Link } from 'react-router-dom';
 
 function Product({ id, title, image, price, rating, type, difficulty, dailyDuration, totalDuration, bodyFocus, trainingType, equipment }) {
-  const [basket, dispatch] = useStateValue();
-
-  console.log("This is basket:", basket);
+  const [{detail, basket}, dispatch] = useStateValue();
 
   const addToBasket = () => {
     //dispatch the item into the data layer
@@ -71,10 +69,13 @@ function Product({ id, title, image, price, rating, type, difficulty, dailyDurat
         </div>
       </div>
       <img src={image} />
-      {/*<button className='home__itembtn' onClick={addToBasket}>Add to Basket</button>*/}
-      <Link to={"/details"}>
-        <button className='home__itembtn' onClick={goDetails}>Details</button>
-      </Link>
+      <div className='productbtns'>
+        <Link to={"/details"}>
+          <button className='home__itembtn' onClick={goDetails}>Details</button>
+        </Link>
+        <button className='home__itembtn' onClick={addToBasket}>Add to Basket</button>
+      </div>
+
 
     </div>
   )

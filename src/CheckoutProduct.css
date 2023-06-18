@@ -2,10 +2,13 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
 }
 
 .checkoutProduct__info {
     padding-left: 20px
+    
 }
 
 .checkoutProduct__info > button {

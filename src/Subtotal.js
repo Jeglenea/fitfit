@@ -17,9 +17,6 @@ function Subtotal({decimalScale, value, displayType, thousandSeparator, prefix})
                   <p>
                     Subtotal ({basket.length} plans): <strong>{value}</strong>
                   </p>
-                  <small className="subtotal__gift"> {/*Bu kısım silinebilir/yeniden düzenlenebilir.*/}
-                    <input type="checkbox" /> This order contains a gift
-                  </small>
                 </>
               )}
               decimalScale={2}
