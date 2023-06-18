@@ -32,6 +32,29 @@ function Product({ id, title, image, price, rating, type, difficulty, dailyDurat
     });
   };
 
+  const goDetails = () => {
+    //dispatch the item into the data layer
+    dispatch({
+      type: 'GO_DETAILS',
+      item: {
+        id: id,
+        title: title,
+        image: image,
+        price: price,
+        rating: rating,
+        type: type,  //workout & diet
+
+        //workout special
+        difficulty: difficulty,
+        dailyDuration: dailyDuration,
+        totalDuration: totalDuration,
+        bodyFocus: bodyFocus,
+        trainingType: trainingType,
+        equipment: equipment,
+      },
+    });
+  };
+
   return (
     <div className='product'>
       <div className='productinfo'>
@@ -49,8 +72,8 @@ function Product({ id, title, image, price, rating, type, difficulty, dailyDurat
       </div>
       <img src={image} />
       {/*<button className='home__itembtn' onClick={addToBasket}>Add to Basket</button>*/}
-      <Link to="/details">
-        <button className='home__itembtn'>Add to Basket</button>
+      <Link to={"/details"}>
+        <button className='home__itembtn' onClick={goDetails}>Details</button>
       </Link>
 
     </div>

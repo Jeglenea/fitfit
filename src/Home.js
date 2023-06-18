@@ -116,15 +116,13 @@ function Home() {
                     price={selectedProduct.price}
                     rating={selectedProduct.rating}
                     image={selectedProduct.image}
-                    type="workout"
-                    difficulty={4}
-                    dailyDuration=" Avg. 38 Minutes -
-                            Min. 32 Minutes -
-                            Max. 45 Minutes"
-                    totalDuration="4 Weeks"
-                    bodyFocus="Total Body"
-                    trainingType="Balance/Agility, Cardiovascular, HIIT, Pilates, Strength Training, Toning"
-                    equipment="Dumbbell"
+                    type={selectedProduct.type}
+                    difficulty={selectedProduct.difficulty}
+                    dailyDuration={selectedProduct.dailyDuration}
+                    totalDuration={selectedProduct.totalDuration}
+                    bodyFocus={selectedProduct.bodyFocus}
+                    trainingType={selectedProduct.trainingType}
+                    equipment={selectedProduct.equipment}
                   />
                   <div class="moreinfo info">
                     <p>
