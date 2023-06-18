@@ -19,9 +19,6 @@ function UserPanel() {
           {value.toString()}
         </div>
       </div>
-
-
-      
     </div>
   );
 }

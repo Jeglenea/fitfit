@@ -8,7 +8,6 @@ import diet01 from "./img/guide-high-protein-diet.jpg";
 import diet02 from "./img/guide-keto-diet.jpg";
 import diet03 from "./img/guide-low-carb-foods.jpg";
 import diet04 from "./img/guide-time-restricted-eating.jpg";
-import { useStateValue } from './StateProvider';
 
 
 function Home() {
@@ -87,15 +86,6 @@ function Home() {
       totalDuration: "4 Weeks",
     },
   ];
-
-  const handleClick = () => {
-    const modal = document.getElementById("popup");
-    modal.classList.add("show");
-  };
-  const hidePopup = () => {
-    const modal = document.getElementById("popup");
-    modal.classList.remove("show");
-  };
 
 
   return (
