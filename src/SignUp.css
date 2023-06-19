@@ -16,3 +16,14 @@
     justify-content: space-evenly;
     margin-bottom: 5px;
 }
+
+.consultant_container{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5); /* Checkbox büyüklüğü */
+    margin-left: 10px; /* Yazı ile checkbox arasındaki boşluk */
+  } 

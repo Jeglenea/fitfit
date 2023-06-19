@@ -32,8 +32,6 @@ function ConsultantPlanList({ id, title, image, price, rating, type, difficulty,
 
     return (
         <div className="consultantPlanList">
-            <img className='consultantPlanList__image' src={image} />
-
             <div className="consultantPlanList__info">
                 <p className='consultantPlanList__title'>{title}</p>
                 <p className="consultantPlanList__price">

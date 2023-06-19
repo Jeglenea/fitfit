@@ -5,11 +5,11 @@ function Advert() {
     const [consultantId, setConsultantId] = useState();
     const [consultantName, setConsultantName] = useState();
     const [title, setTitle] = useState();
-    const [price, setPrice] = useState();
-    const [rating, setRating] = useState();
+    const [price, setPrice] = useState(0);
+    const [rating, setRating] = useState(0);
     const [image, setImage] = useState();
     const [type, setType] = useState();
-    const [difficulty, setDifficulty] = useState();
+    const [difficulty, setDifficulty] = useState(0);
     const [dailyDuration, setDailyDuration] = useState();
     const [totalDuration, setTotalDuration] = useState();
     const [bodyFocus, setBodyFocus] = useState();
@@ -76,10 +76,10 @@ function Advert() {
                     onChange={(e) => setTitle(e.target.value)} />
                 <br /><br />
                 <input type='number' placeholder="Enter your price" value={price}
-                    onChange={(e) => setPrice(e.target.value)} />
+                    onChange={(e) => setPrice(parseInt(e.target.value))} />
                 <br /><br />
                 <input type='number' min="1" max="5" placeholder="Enter your rating" value={rating}
-                    onChange={(e) => setRating(e.target.value)} />
+                    onChange={(e) => setRating(parseInt(e.target.value))} />
                 <br /><br />
                 <input placeholder="Enter your image link " value={image}
                     onChange={(e) => setImage(e.target.value)} />
@@ -88,7 +88,7 @@ function Advert() {
                     onChange={(e) => setType(e.target.value)} />
                 <br /><br />
                 <input type='number' min="1" max="5" placeholder="Enter your difficulty level" value={difficulty}
-                    onChange={(e) => setDifficulty(e.target.value)} />
+                    onChange={(e) => setDifficulty(parseInt(e.target.value))} />
                 <br /><br />
                 <input placeholder="Enter your dailyDuration" value={dailyDuration}
                     onChange={(e) => setDailyDuration(e.target.value)} />
@@ -118,7 +118,7 @@ function Advert() {
                                 <p>title: {product.title}</p>
                                 <p>price: {product.price}</p>
                                 <p>rating: {product.rating}</p>
-                                <p>image: {product.image}</p>
+                                <p>image: {product.image && product.image.url}</p>
                                 <p>type: {product.type}</p>
                                 <p>difficulty: {product.difficulty}</p>
                                 <p>dailyDuration: {product.dailyDuration}</p>

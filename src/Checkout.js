@@ -8,14 +8,13 @@ import Banner from './img/banner.png';
 {/*Checkout sayfamız 2 ye ayrılıyor. Left -> Orders, Right-> Complete */}
 
 function Checkout() {
-  const[{basket, user }, dispatch] = useStateValue();
+  const[{basket}, dispatch] = useStateValue();
 
   return( 
   <div className="checkout">
     <div className="checkout_left"> {/*Alt satırdak src'deki fotoğraf değiştirilmeli. */}
 
     <div>
-        <h3 className="checkout_hi">Hello, {user?.email}</h3>
         <h2 className="checkout_title">
             Your Shopping Basket
         </h2>

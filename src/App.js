@@ -10,6 +10,7 @@ import SignUp from "./SignUp";
 import UserPanel from "./UserPanel";
 import UserProgress from "./UserProgress";
 import Details from "./Details";
+import Advert from "./Advert";
 import Consultant from "./Consultant";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
@@ -60,6 +61,7 @@ function App() {
           <Route path="/userprogress" element={<><Header/><UserProgress/></>}/>
           <Route path="/details" element={<><Header/><Details/></>}/>
           <Route path="/consultant" element={<><Header/><Consultant/></>}/>
+          <Route path="/advert" element={<><Header/><Advert/></>}/>
           <Route path="/" element={<><Header /><Home /></>} /> {/*!!!!Home route'unun en altta kaldığından emin olun.!!!!*/}
         </Routes>
       </div>

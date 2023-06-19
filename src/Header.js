@@ -53,6 +53,21 @@ function Header() {
           </div>
         </Link>}
 
+
+        {!user ? <Link to={!user && '/login'}>
+          <div className="header__option">
+            <span className="header__optionLineOne">Consultant</span>
+            <span className="header__optionLineTwo">Panel</span>
+          </div>
+        </Link> :
+        <Link to="/consultant">
+          <div className="header__option">
+            <span className="header__optionLineOne">Consultant</span>
+            <span className="header__optionLineTwo">Panel</span>
+          </div>
+        </Link>}
+
+
         <Link to="/checkout">
           <div className="header__optionBasket">
             <ShoppingBasketIcon/>
